@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+body,html {
+  top: 0px !important;
+  position: static !important;
+  overflow-x: clip;
+}
+.hideExtra{
+  overflow-x: clip;
+}
+
+@media print {
+  @page {
+    margin: 1cm;
+  }
+  
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  .print\:bg-white {
+    background-color: white !important;
+  }
+}
+
+@media print {
+  /* Force hide all header and footer elements */
+  header,
+  footer,
+  nav,
+  [role="banner"],
+  [role="navigation"],
+  [role="contentinfo"],
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Target common class names for headers/footers */
+  [class*="header"],
+  [class*="Header"],
+  [class*="footer"],
+  [class*="Footer"],
+  [class*="nav"],
+  [class*="Nav"],
+  [class*="navbar"],
+  [class*="Navbar"],
+  [class*="menu"],
+  [class*="Menu"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Clean page setup */
+  @page {
+    margin: 0.5cm;
+    size: A4 portrait;
+  }
+
+  /* Reset body and html */
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Ensure colors print correctly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide elements with print:hidden class */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Show elements with print:block class */
+  .print\:block {
+    display: block !important;
+  }
+
+  /* Remove animations in print */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Hide header/footer when printing class is active */
+body.printing header,
+body.printing footer,
+body.printing nav,
+body.printing [class*="Header"],
+body.printing [class*="Footer"],
+body.printing [class*="Nav"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+
+
+
+
+
+/* Hide Google Translate elements */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-logo-link,
+.goog-te-gadget {
+  display: none !important;
+}
+
+
+.skiptranslate {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
